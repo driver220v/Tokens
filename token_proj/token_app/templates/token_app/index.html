@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block content %}
+  <h2></h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit"></button>
+  </form>
+{% if form.errors %}
+    {{ form.error_messages.inactive }} Please advice administrator
+{% endif %}
+{% endblock %}
+
+
+</body>
+</html>
